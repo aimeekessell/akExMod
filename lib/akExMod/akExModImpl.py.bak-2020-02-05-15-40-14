@@ -8,7 +8,6 @@ from installed_clients.KBaseReportClient import KBaseReport
 # Need to include DataFileUtil to fetch and save objects since using FBAModel.
 from installed_clients.DataFileUtilClient import DataFileUtil
 from pprint import pprint #'Pretty' print
-
 #END_HEADER
 
 
@@ -66,21 +65,14 @@ class akExMod:
         FBAModel_obj = FBAModel_data['data']
         FBAModel_meta = FBAModel_data['info'][10]
         
-        #To test if model is input.
-        #print('Printing the objective')
-        #pprint(FBAModel_obj)
-        #print('Printing the reference ID')
-        #pprint(FBAModel_ref)
-        #print('Printing the data')
-        #pprint(FBAModel_data)
-        #print('Printing the meta')
-        #pprint(FBAModel_meta)
-        
-        if id.find('biomass'):
-            print('Yes, string found in file')
-        else:
-            print('String not found in file')
-
+        print('Printing the objective')
+        pprint(FBAModel_obj)
+        print('Printing the reference ID')
+        pprint(FBAModel_ref)
+        print('Printing the data')
+        pprint(FBAModel_data)
+        print('Printing the meta')
+        pprint(FBAModel_meta)
         
         report = KBaseReport(self.callback_url)
         report_info = report.create({'report': {'objects_created':[],
